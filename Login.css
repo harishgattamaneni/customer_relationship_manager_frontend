@@ -1,0 +1,232 @@
+/* Custom properties for easy color changes */
+:root {
+  --color-primary: #8a2be2; /* BlueViolet */
+  --color-secondary: #00bcd4; /* Cyan/Teal */
+  --color-background-dark: #121212;
+  --color-surface-dark: rgba(33, 33, 33, 0.8);
+  --color-text-light: #e0e0e0;
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  /* Use the new Inter font */
+  font-family: 'Inter', sans-serif; 
+  background: var(--color-background-dark);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow for background effects */
+}
+
+/* Advanced Background Effect */
+.glow-ball {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 400px;
+  height: 400px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.3;
+  animation: glow-move 20s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+@keyframes glow-move {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(calc(100vw - 400px), calc(100vh - 400px)); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Login Container - Frosted Glass Effect */
+.login-container {
+  display: flex;
+  /* Use a semi-transparent dark surface color */
+  background: var(--color-surface-dark); 
+  border-radius: 20px; /* More rounded corners */
+  /* Advanced Shadow: multiple layers for depth */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-border);
+  overflow: hidden;
+  width: 800px; /* Increased width for a more spacious feel */
+  max-width: 90%;
+  position: relative;
+  z-index: 10;
+  /* Frosted Glass Effect */
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px); 
+  /* Gentle entry animation */
+  animation: fadeInScale 0.6s ease-out; 
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Left Image Section */
+.login-image {
+  flex: 1;
+  background: #1e1e1e; /* Darker background for image side */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-image img {
+  width: 100%;
+  max-width: 300px; 
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.9;
+  transition: transform 0.5s ease;
+}
+
+.login-image img:hover {
+  transform: scale(1.05); /* subtle hover effect */
+}
+
+/* Right Form Section */
+.login-form {
+  flex: 1;
+  padding: 50px 40px; /* More padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h2 {
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--color-text-light); /* Light text on dark background */
+  letter-spacing: 1px;
+}
+
+/* Input Group Styles */
+.login-form .input-group {
+  margin-bottom: 25px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  transition: color 0.3s;
+}
+
+/* Input Styles */
+.login-form input {
+  width: 100%;
+  padding: 14px 16px;
+  /* Transparent background, light border */
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid var(--color-border); 
+  border-radius: 10px; /* More rounded inputs */
+  font-size: 15px;
+  color: var(--color-text-light);
+  outline: none;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+/* Advanced Focus State */
+.login-form input:focus {
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3); /* Subtle glow effect */
+}
+
+/* Placeholder text style */
+.login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+}
+
+/* Password Wrapper for icon positioning */
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.password-toggle:hover {
+  color: var(--color-primary);
+}
+
+
+/* Button Styles - Gradient & Hover Effect */
+.login-form button {
+  /* Gradient for a premium look */
+  background: linear-gradient(90deg, var(--color-primary) 0%, #a04dff 100%); 
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  /* Box shadow for a lift effect */
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4); 
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-form button:hover {
+  /* Subtle change in gradient and shadow lift on hover */
+  background: linear-gradient(90deg, #a04dff 0%, var(--color-primary) 100%);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Extra Links */
+.login-form .extra-links {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-form .extra-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--color-secondary); /* Use the secondary color for links */
+  margin: 0 10px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.login-form .extra-links a:hover {
+  text-decoration: none; /* No underline, use color/shadow change */
+  color: #fff;
+  text-shadow: 0 0 5px var(--color-secondary);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .login-container {
+      flex-direction: column;
+      width: 90%;
+  }
+  .login-image {
+      display: none; /* Hide image on small screens for cleaner mobile experience */
+  }
+  .login-form {
+      padding: 40px 30px;
+  }
+}

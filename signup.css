@@ -1,0 +1,178 @@
+/* Custom properties for easy color changes - consistent with Login.css */
+:root {
+    --color-primary: #8a2be2; /* BlueViolet */
+    --color-secondary: #00bcd4; /* Cyan/Teal */
+    --color-background-dark: #121212;
+    --color-surface-dark: rgba(33, 33, 33, 0.75);
+    --color-text-light: #e0e0e0;
+    --color-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; 
+    background: var(--color-background-dark);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+/* Advanced Background Effect (Consistent with Login) */
+.glow-ball {
+    position: absolute;
+    top: -200px;
+    right: -200px; /* Moved to the opposite side for variation */
+    width: 400px;
+    height: 400px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.3;
+    animation: glow-move 20s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+@keyframes glow-move {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(calc(-100vw + 400px), calc(100vh - 400px)); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Form Container - Frosted Glass */
+.form-container {
+    /* Kept class: form-container */
+    background: var(--color-surface-dark); 
+    border-radius: 20px; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-border);
+    padding: 40px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    animation: fadeInScale 0.6s ease-out; 
+    border-left: 5px solid var(--color-primary); /* Simple accent line */
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.form-container h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-text-light); 
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 15px;
+}
+
+/* Styling for the wrapping divs */
+.form-container form > div {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+/* Input Styles */
+.form-container input {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid var(--color-border); 
+    border-radius: 10px; 
+    font-size: 15px;
+    color: var(--color-text-light);
+    outline: none;
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Crucial for padding/width calculation */
+}
+
+/* Advanced Focus State */
+.form-container input:focus {
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3); 
+}
+
+/* Button Group Layout */
+.buttons-group {
+    display: flex;
+    gap: 15px; /* Spacing between the buttons */
+    margin-top: 30px !important; /* Important to override div margin-bottom */
+}
+
+/* Primary Button (SignUp) */
+.save-btn {
+    /* Kept class: save-btn */
+    flex: 1; /* Makes it take up half the space */
+    background: linear-gradient(90deg, var(--color-primary) 0%, #a04dff 100%); 
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4); 
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: linear-gradient(90deg, #a04dff 0%, var(--color-primary) 100%);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Secondary Button (Login) */
+.button {
+    /* Kept class: button */
+    flex: 1; /* Makes it take up half the space */
+    background: transparent;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    background: var(--color-secondary);
+    color: var(--color-background-dark);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+}
+
+/* Optional terms link for a professional touch */
+.terms-link {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.terms-link a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.terms-link a:hover {
+    color: #fff;
+    text-decoration: underline;
+}

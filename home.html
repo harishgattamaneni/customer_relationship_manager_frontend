@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="glow-ball"></div>
+
+  <div class="top-bar">
+    <div class="header">CRM - Customer Relationship Manager</div>
+    
+    <div class="header-actions">
+        <a href="new cusotmer.html"><button class="add-btn">➕ Add Customer</button></a>
+        <button class="logout-btn">Log Out</button>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th class="action-column">Action</th>
+      </tr>
+    </thead>
+    <tbody id="customersTable">
+      
+    </tbody>
+  </table>
+  
+  <script src="home.js"></script>
+</body>
+</html>
