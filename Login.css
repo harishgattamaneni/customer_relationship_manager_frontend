@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Hide overflow for background effects */
+  overflow: auto; /* Hide overflow for background effects */
 }
 
 /* Advanced Background Effect */
