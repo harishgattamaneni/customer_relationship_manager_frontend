@@ -16,7 +16,7 @@ save_button[0].addEventListener('click',async (e)=> {
     headers.set("Authorization", "Basic " + btoa(email + ":" + password))
 
     try {
-        let response = await fetch("https://customerrelationshipmanager-production.up.railway.app/owner/dummy", { headers });
+        let response = await fetch("https://customer-relationship-manager-latest-nlml.onrender.com/owner/dummy", { headers });
 
         if (response.status === 401) {
             // Credentials incorrect

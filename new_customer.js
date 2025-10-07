@@ -25,7 +25,7 @@ save_button[0].addEventListener('click',async (e) => {
     console.log(JSON.stringify(data))
 
     try {
-        let response = await fetch("https://customerrelationshipmanager-production.up.railway.app/Customer/add", {
+        let response = await fetch("https://customer-relationship-manager-latest-nlml.onrender.com/Customer/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

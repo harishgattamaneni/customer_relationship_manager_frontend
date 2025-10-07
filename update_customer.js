@@ -12,7 +12,7 @@ window.onload = async () => {
         "Basic " + btoa(email + ":" + password)
     );
 
-    fetch(`https://customerrelationshipmanager-production.up.railway.app/Customer/getbyid/${id}`,{headers})
+    fetch(`https://customer-relationship-manager-latest-nlml.onrender.com/Customer/getbyid/${id}`,{headers})
         .then(result => result.json())
         .then(data => {
             console.log(data);
@@ -52,7 +52,7 @@ save_button[0].addEventListener('click',async (e) => {
     console.log(JSON.stringify(data))
 
     try {
-        let response = await fetch("https://customerrelationshipmanager-production.up.railway.app/Customer/update", {
+        let response = await fetch("https://customer-relationship-manager-latest-nlml.onrender.com/Customer/update", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

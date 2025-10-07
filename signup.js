@@ -15,7 +15,7 @@ save_button[0].addEventListener('click',async (e)=> {
     };
     try {
 
-        let response = await fetch("https://customerrelationshipmanager-production.up.railway.app/owner/signup", {
+        let response = await fetch("https://customer-relationship-manager-latest-nlml.onrender.com/owner/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

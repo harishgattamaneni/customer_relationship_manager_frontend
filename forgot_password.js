@@ -13,7 +13,7 @@ verify_button.addEventListener('click',async (e)=>{
     e.preventDefault();
     let email = document.getElementById("email").value;
     try{
-        let response = await fetch(`https://customerrelationshipmanager-production.up.railway.app/owner/getOwnerByEmailId/${email}`)
+        let response = await fetch(`https://customer-relationship-manager-latest-nlml.onrender.com/owner/getOwnerByEmailId/${email}`)
         console.log(response)
         if(response.ok){
             let result = await response.text()
@@ -43,7 +43,7 @@ verify_button.addEventListener('click',async (e)=>{
                         console.log(data)
                         
                         try{
-                            let response = await fetch("https://customerrelationshipmanager-production.up.railway.app/owner/forgot_password", {
+                            let response = await fetch("https://customer-relationship-manager-latest-nlml.onrender.com/owner/forgot_password", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json"

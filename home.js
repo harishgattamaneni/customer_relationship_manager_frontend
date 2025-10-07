@@ -15,7 +15,7 @@ window.onload=()=>{
     "Authorization",
     "Basic " + btoa(email + ":" + password)
     );
-    fetch("https://customerrelationshipmanager-production.up.railway.app/Customer/get",{headers})
+    fetch("https://customer-relationship-manager-latest-nlml.onrender.com/Customer/get",{headers})
         .then(result => result.json())
         .then(data => {
             console.log(data);
@@ -45,7 +45,7 @@ function renderAllCustomers(){
 
 async function deleteCustomer(email) {
     try {
-        let response = await fetch(`https://customerrelationshipmanager-production.up.railway.app/Customer/delete/${email}`, {
+        let response = await fetch(`https://customer-relationship-manager-latest-nlml.onrender.com/Customer/delete/${email}`, {
             method: "DELETE",
             headers
         });
